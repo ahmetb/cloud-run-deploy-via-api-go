@@ -93,6 +93,8 @@ func main() {
 
 	err = waitForReady(ctx, c, region, project, name, "Ready")
 	panicIfErr(err)
+	err = waitForReady(ctx, c, region, project, name, "RoutesReady")
+	panicIfErr(err)
 	log.Printf("service is ready and serving traffic!")
 
 	// give service public access via IAM bindings.
